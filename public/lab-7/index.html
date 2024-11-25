@@ -4,7 +4,79 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adventure Mad Libs</title>
-    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* CSS styles */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #e0f7fa;
+        margin: 0;
+        padding: 0;
+        color: #004d40;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 80px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        color: #00796b;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      select {
+        width: 80%;
+        padding: 10px;
+        border: 1px solid #b2dfdb;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+
+      button[type="submit"],
+      button {
+        padding: 10px 20px;
+        background-color: #00796b;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button[type="submit"]:hover,
+      button:hover {
+        background-color: #004d40;
+      }
+
+      #sentence {
+        margin-top: 20px;
+        display: none;
+      }
+
+      #madLibsSentence {
+        font-style: italic;
+      }
+
+      footer {
+        margin-top: 20px;
+        text-align: center;
+        color: #004d40;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -73,40 +145,38 @@
         <span id="lastModified"></span>
       </p>
     </footer>
-  </div>
 
-  <script>
-    function generateSentence(event) {
-      event.preventDefault();
+    <script>
+      function generateSentence(event) {
+        event.preventDefault();
 
-      const noun = document.getElementById("noun").value;
-      const adjective = document.getElementById("adjective").value;
-      const verb = document.getElementById("verb").value;
-      const emotion = document.getElementById("emotion").value;
-      const place = document.getElementById("place").value;
+        const noun = document.getElementById("noun").value;
+        const adjective = document.getElementById("adjective").value;
+        const verb = document.getElementById("verb").value;
+        const emotion = document.getElementById("emotion").value;
+        const place = document.getElementById("place").value;
 
-      const sentence = `Hi, I am ${noun}. Here is my story: In ${place}, their eyes met, sparking a connection. He admired her ${adjective}, she cherished his supportive nature. Together, they created beautiful memories ${verb}, filling their hearts with ${emotion}.`;
+        const sentence = `Hi, I am ${noun}. Here is my story: In ${place}, their eyes met, sparking a connection. He admired her ${adjective}, she cherished his supportive nature. Together, they created beautiful memories ${verb}, filling their hearts with ${emotion}.`;
 
-      document.getElementById("madLibsSentence").innerText = sentence;
-      document.getElementById("madLibsForm").style.display = "none";
-      document.getElementById("sentence").style.display = "block";
-    }
+        document.getElementById("madLibsSentence").innerText = sentence;
+        document.getElementById("madLibsForm").style.display = "none";
+        document.getElementById("sentence").style.display = "block";
+      }
 
-    function goBack() {
-      document.getElementById("madLibsForm").reset();
-      document.getElementById("madLibsForm").style.display = "block";
-      document.getElementById("sentence").style.display = "none";
-    }
+      function goBack() {
+        document.getElementById("madLibsForm").reset();
+        document.getElementById("madLibsForm").style.display = "block";
+        document.getElementById("sentence").style.display = "none";
+      }
 
-    document
-      .getElementById("madLibsForm")
-      .addEventListener("submit", generateSentence);
-  </script>
-  
-  <script type="text/javascript">
-    var x = document.lastModified;
-    document.getElementById("lastModified").textContent = x;
-  </script>
-</body>
+      document
+        .getElementById("madLibsForm")
+        .addEventListener("submit", generateSentence);
+    </script>
+    
+    <script type="text/javascript">
+      var x = document.lastModified;
+      document.getElementById("lastModified").textContent = x;
+    </script>
+  </body>
 </html>
-
