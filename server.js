@@ -26,7 +26,7 @@ app.post('/', (req, res) => {
   res.send(`
     <h1>Submission Successful</h1>
     <p>${madLib}</p>
-    <a href="/ITC505/lab-7">Go Back to Form</a>
+    <a href="/">Go Back to Form</a>
   `);
 });
 
