@@ -8,17 +8,17 @@ const PORT = 8080;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/ITC505/lab-7', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.post('/ITC505/lab-7', (req, res) => {
+app.post('/', (req, res) => {
   const { noun, adjective, verb, emotion, place } = req.body;
   if (!noun || !adjective || !verb || !emotion || !place) {
     res.send(`
       <h1>Submission Failed</h1>
       <p>Please fill out ALL fields</p>
-      <a href="/ITC505/lab-7">Go Back to Form</a>
+      <a href="/">Go Back to Form</a>
     `);
     return;
   }
@@ -31,5 +31,5 @@ app.post('/ITC505/lab-7', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}/ITC505/lab-7`);
+  console.log(`Server running on `);
 });
