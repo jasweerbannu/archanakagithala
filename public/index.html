@@ -59,7 +59,7 @@
           In the server.js file, a POST route is created to process form data and generate the Mad Lib story.
         </li>
         <li>
-          Finally, running "node server.js" and accessing "http://localhost:8080/ITC505/lab-7" produces the expected results.
+          Finally, running "node server.js" and accessing "https://archanakagithala.onrender.com/" produces the expected results.
         </li>
       </ul>
       <div id="sentence" style="display: none">
@@ -102,12 +102,7 @@
       .getElementById("madLibsForm")
       .addEventListener("submit", generateSentence);
   </script>
-  <footer>
-    <p>
-      Last updated:
-      <span id="lastModified"></span>
-    </p>
-  </footer>
+  
   <script type="text/javascript">
     var x = document.lastModified;
     document.getElementById("lastModified").textContent = x;
